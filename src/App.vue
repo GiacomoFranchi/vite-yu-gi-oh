@@ -1,15 +1,31 @@
 <script>
-import AppHeader from './components/AppHeader.vue';
+import axios from "axios";
+import AppHeader from "./components/AppHeader.vue";
+import AppMain from "./components/AppMain.vue";
+import { store } from "./store.js";
 
-export default{
-  components:{
-    AppHeader,
-  }
-}
+
+export default {
+  data() {
+    return {
+      store
+    };
+  },
+  created() {
+    this.store.loading = true;
+    axios.get(this.store.apiUrl).then((resp) => {
+      this.store.characters = resp.data;
+      console.log(this.store.characters);
+      this.store.loading = false;
+    });
+  },
+  components: { AppHeader, AppMain },
+};
 </script>
 
 <template>
   <AppHeader />
+  <AppMain />
 </template>
 
 <style lang="scss">

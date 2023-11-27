@@ -20,16 +20,16 @@ header{
     width: 100%;
     display: flex;
     align-items:center;
-    padding: 2rem;
+    padding: 1.5rem;
     gap: 2rem;
     .logo{
-        width: 10%;
+        width: 15%;
         img{
             width: 100%;
         }
     }
     h1{
-            font-size: 5rem;
+            font-size: 3rem;
         }
 }
 
