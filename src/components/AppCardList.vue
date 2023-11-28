@@ -16,8 +16,8 @@ export default {
 <template>
     <div class="container">
         <div class="row" >
-            <div class="col" v-for="character in store.characters">
-                <AppCard  :character="character" />
+            <div class="col" v-for="card in store.cards">
+                <AppCard  :card="card" />
             </div>
         </div>
     </div>

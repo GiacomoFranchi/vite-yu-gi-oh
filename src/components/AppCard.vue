@@ -3,16 +3,16 @@ import { stringifyExpression } from '@vue/compiler-core';
 
 export default {
   props: {
-    character: Object,
+    card: Object,
   },
 };
 </script>
 
 <template>
     <div>
-        <img :src="character.card_images[0].image_url" alt="" />
-        <h3>{{ character.name }}</h3>
-        <p>{{ character.archetype ? character.archetype : "Nessun Archetipo" }}</p>
+        <img :src="card.card_images[0].image_url" alt="" />
+        <h3>{{ card.name }}</h3>
+        <p>{{ card.archetype ? card.archetype : "Nessun Archetipo" }}</p>
     </div>
   </template>
   

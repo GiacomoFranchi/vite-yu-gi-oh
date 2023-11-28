@@ -1,15 +1,25 @@
 <script>
+import { store } from '../store';
 export default {
-    
+    data(){
+        return{
+            store,
+            options: [
+                { text: 'Alien', value: 'A' },
+                { text: 'Ally of Justice', value: 'B' },
+                { text: 'Ancient Gear', value: 'C' }
+            ]
+        }
+    }
 }
 </script>
+
 <template>
-<select  aria-label="Default select example">
-    <option selected>Alien   </option>
-    <option value="1">One</option>
-    <option value="2">Two</option>
-    <option value="3">Three</option>
-</select>
+    <select @change="emit('selChange')" v-model="store.selected">
+        <option v-for="option in options" :value="option.value">
+            {{ option.text }}
+        </option>
+    </select>
 </template>
 
 <style lang="scss" scoped>

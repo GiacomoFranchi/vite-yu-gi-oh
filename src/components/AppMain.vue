@@ -1,19 +1,39 @@
 <script>
+import { store } from "../store.js";
 import AppCardList from './AppCardList.vue';
 import selectButton from './selectButton.vue';
+import axios from "axios";
 
 
 export default {
+    data(){
+        return{
+            store,
+        };
+    },
     components:{
     selectButton,
     AppCardList
-}    
+    },
+    methods:{
+        selArchetype(){
+            axios.get(this.store.apiUrl,{
+                params:{
+                    archetype: this.store.selected,
+                },
+            })
+            console.log(archetype)
+            .then((resp) => {
+                this.store.cards = resp.data.data;
+            });
+        }
+    },
 }
 </script>
 
 <template>
     <main>
-        <selectButton />
+        <selectButton @selChange="selArchetype" />
         <div class="main-section">
             <AppCardList />
         </div>

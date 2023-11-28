@@ -8,14 +8,13 @@ import { store } from "./store.js";
 export default {
   data() {
     return {
-      store
+      store,
     };
   },
   created() {
     this.store.loading = true;
     axios.get(this.store.apiUrl).then((resp) => {
-      this.store.characters = resp.data.data;
-      console.log(this.store.characters);
+      this.store.cards = resp.data.data;
       this.store.loading = false;
     });
   },
