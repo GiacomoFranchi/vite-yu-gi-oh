@@ -16,8 +16,8 @@ export default {
 <template>
     <div class="container">
         <div class="row" >
-            <div class="col">
-                <AppCard v-for="character in store.characters" :character="character" />
+            <div class="col" v-for="character in store.characters">
+                <AppCard  :character="character" />
             </div>
         </div>
     </div>
@@ -32,15 +32,12 @@ export default {
     padding: 2rem 0;
     .row{
         width: 100%;
+        display: flex; 
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: space-between;        
         .col{
-            width: 100%;
-            display: flex; 
-            height: 100%;  
-            flex-direction: row;
-            flex-wrap: wrap;
-            .AppCard{
-                width: calc(100% / 5 - 0.5rem);
-            }
+            width: calc(100% / 5 - 30px); 
         }
     }
  }

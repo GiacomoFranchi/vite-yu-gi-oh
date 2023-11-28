@@ -9,10 +9,10 @@ export default {
 </script>
 
 <template>
-    <div v-for="data in character">
-        <img v-for="image in data.card_images" :src="image.image_url" alt="" />
-        <h3>{{ data.name }}</h3>
-        <p>{{ data.archetype }}</p>
+    <div>
+        <img :src="character.card_images[0].image_url" alt="" />
+        <h3>{{ character.name }}</h3>
+        <p>{{ character.archetype ? character.archetype : "Nessun Archetipo" }}</p>
     </div>
   </template>
   
@@ -20,7 +20,8 @@ export default {
 @use "../style/partials/variables" as *;
 
 div{
-    width:calc(100% / 5 - 2rem);
+    width:100%;
+    height: 100%;
     margin: 1rem;
     text-align: center;
     background-color: $bg-color;
