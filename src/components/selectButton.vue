@@ -8,7 +8,9 @@ export default {
                 { text: '--', },
                 { text: 'Alien', value: 'Alien' },
                 { text: 'Ally of Justice', value: 'Ally of Justice' },
-                { text: 'Ancient Gear', value: 'Ancient Gear' }
+                { text: 'Ancient Gear', value: 'Ancient Gear' },
+                { text: 'Archfiend', value: 'Archfiend' },
+                { text: 'Blue-Eyes', value: 'Blue-Eyes' }
             ]
         }
     }
