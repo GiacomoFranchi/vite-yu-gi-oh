@@ -22,10 +22,10 @@ export default {
                     archetype: this.store.selected,
                 },
             })
-            console.log(archetype)
             .then((resp) => {
                 this.store.cards = resp.data.data;
             });
+            console.log("archetype")
         }
     },
 }

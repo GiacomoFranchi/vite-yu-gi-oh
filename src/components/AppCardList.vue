@@ -1,6 +1,7 @@
 <script>
 import { store } from "../store";
 import AppCard from "./AppCard.vue";
+import AppNumberCards from "./AppNumberCards.vue";
 
 
 export default {
@@ -9,12 +10,13 @@ export default {
       store,
     };
   },
-  components: { AppCard, },
+  components: { AppCard, AppNumberCards },
 };
 </script>
 
 <template>
     <div class="container">
+        <AppNumberCards />
         <div class="row" >
             <div class="col" v-for="card in store.cards">
                 <AppCard  :card="card" />
@@ -33,11 +35,11 @@ export default {
     .row{
         width: 100%;
         display: flex; 
-        gap: 15px;
         flex-wrap: wrap;
         justify-content: space-between;        
         .col{
-            width: calc(100% / 5 - 30px); 
+            width: calc(100% / 5 - 20px); 
+            margin: 10px;
         }
     }
  }
